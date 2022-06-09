@@ -187,8 +187,9 @@
 
     window.onload = function () {
         const urrl = window.location.host;
-        document.location.replace(`http://${window.location.host}${window.location.pathname}`);
-
+        if (String(window.location.origin).startsWith("https://")) {
+            document.location.replace(`http://${window.location.host}${window.location.pathname}`);
+        }
         document.querySelector('#input').addEventListener("keydown", (e) => {
             if (e.keyCode == 13) { // enter, return
                 e.preventDefault();
