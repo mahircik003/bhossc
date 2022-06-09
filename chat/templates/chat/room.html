@@ -146,7 +146,7 @@
     const legit_user_2_username = JSON.parse(document.getElementById("legit_user_2_username").textContent);
 
     const chatSocket = new WebSocket(
-        'ws://'
+        'wss://'
         + window.location.host
         + '/ws/chat/'
         + roomName
