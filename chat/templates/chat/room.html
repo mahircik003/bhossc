@@ -146,7 +146,7 @@
     const legit_user_2_username = JSON.parse(document.getElementById("legit_user_2_username").textContent);
 
     const chatSocket = new WebSocket(
-        'wss://'
+        'ws://'
         + window.location.host
         + '/ws/chat/'
         + roomName
@@ -187,7 +187,8 @@
 
     window.onload = function () {
         const urrl = window.location.host;
-        document.location.replace(`http://${window.location.host}${window.location.pathname}`)
+        document.location.replace(`http://${window.location.host}${window.location.pathname}`);
+
         document.querySelector('#input').addEventListener("keydown", (e) => {
             if (e.keyCode == 13) { // enter, return
                 e.preventDefault();
