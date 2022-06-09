@@ -138,11 +138,9 @@
                 <div class="data">
 
                     <div class="text">
-                        <h3>
                             <div style="bottom: 5px;" class="avatar avatar--small">
                                 <img src="{{friend.avatar.url}}">
                             </div>
-                            <!-- <img src="" style="background-color: black; width: 30px; height: 30px; border-radius: 50%;">  -->
                             <a class="epic" href="{% url 'userprofile' friend.id %}" style="text-decoration: none;">
                                 @{{friend.username}}
                             </a>
@@ -251,7 +249,7 @@
     display: block;
 }
 </style>        
-
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
         <script>
             window.onload = () => {
                 $(".avatar img").on('error', function () {

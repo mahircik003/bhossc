@@ -1,11 +1,9 @@
-# chat/consumers.py
-import json
-import re
+import json, re
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
-from django.http import request
-from .models import User, pm_messages
-from asgiref.sync import sync_to_async
+from .models import pm_messages
+# from django.http import request
+# from asgiref.sync import sync_to_async
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):

@@ -58,7 +58,7 @@
             {% endif %}
             {% if request.user != user %}
             {% if user in request.user.friends.all %}
-            <a href="{% url 'chat' pm_link %}" style="color: cornflowerblue;" class="btn btn--main btn--pill">You're friends! How about a message? -- PM</a>
+            <a href="{% url 'chat' pm_link %}" style="color: cornflowerblue;" class="btn btn--main btn--pill">You're friends, how about a message?</a>
             {% elif request.user in user.pending_invs.all %}
             <a href="{% url 'retract' user.id %}" style="color: cornflowerblue;" class="btn btn--main btn--pill">Friendship request was sent! <br> Click to take it back</a>
             {% else %}

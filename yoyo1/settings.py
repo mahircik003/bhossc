@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #os.environ.get('DEBUG') == 'True' # os.environ.get("DEBUG", "False") == "True" 
+DEBUG = False #os.environ.get('DEBUG') == 'True' # os.environ.get("DEBUG", "False") == "True" 
 
 ALLOWED_HOSTS = ['bhos.svdev.me', 'admin.svdev.me', '127.0.0.1', 'localhost', '.herokuapp.com', 'bhossc.herokuapp.com']
 
@@ -191,13 +191,20 @@ EMAIL_USE_TLS = True
 ASGI_APPLICATION = "yoyo1.asgi.application"
 
 # DO NOT UNCOMMENT CODE COMMENTED BELOW
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+#         },
+#     },
+# }
+
+
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
-        },
-    },
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
 }
 
 # Configure Django App for Heroku.
