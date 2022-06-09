@@ -1,1 +1,1 @@
-web: daphne yoyo1.asgi:application --port $PORT --bind 0.0.0.0 -v2
+web: gunicorn yoyo1.wsgi
